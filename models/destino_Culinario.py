@@ -1,5 +1,5 @@
-import json
 
+import json
 class destinoCulinario:
     def __init__(self, id: int, nombre: str, tipo_cocina: str, ingredientes: list[str], precio_minimo: float, precio_maximo: float, popularidad: float, disponibilidad: bool, id_ubicacion: int, imagen: str ):
         self.id = id
@@ -51,6 +51,7 @@ class destinoCulinario:
          print(f"Disponibilidad: {'Disponible' if self.disponibilidad else 'No disponible'}")
          print(f"Ubicación: {self.id_ubicacion}")
          print(f"Imagen: {self.imagen}")
+         self.revisar_actividades("data/actividad.json")
         
             
     @classmethod
@@ -114,3 +115,23 @@ class destinoCulinario:
         destinos = cls.from_json(archivo)
         nombres_existentes = [destino.nombre.lower() for destino in destinos]
         return nombre.lower() in nombres_existentes
+    
+    def encontrar_cosa_por_id(self, cosas, cosa_id):
+        for cosa in cosas:
+            if cosa.id == cosa_id:
+                return cosa
+        return None
+    
+    
+    def revisar_actividades(self, archivo_actividad):
+        from models.actividad import actividad
+        actividades= actividad.from_json(archivo_actividad)
+        encontradas = False
+        for acti in actividades:
+            if acti.destino_id == self.id:
+                acti.mostrar_detalles()  # Corrección: agregar paréntesis para ejecutar el método
+                encontradas = True
+
+        if not encontradas:
+            print("No hay actividades en este destino")
+        

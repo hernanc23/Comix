@@ -63,6 +63,7 @@ class rutaVisita:
             destino_encontrado = self.encontrar_cosa_por_id(destinos, destino_id)
             if destino_encontrado:
                 detalles_destinos.append(destino_encontrado.mostrar_detalles())
+               
 
         return detalles_destinos
     

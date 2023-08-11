@@ -14,7 +14,7 @@
     {
       "id": 3,
       "nombre": "Actividad 3",
-      "destino_id": 102,
+      "destino_id": 1,
       "hora_inicio": "2023-08-10T10:00:00"
     }
   ]
