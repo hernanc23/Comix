@@ -25,11 +25,11 @@ class rutaVisita:
         
         
     @classmethod        
-    def guardar_en_json(cls, destino, archivo):
-        destinos = cls.from_json(archivo)
-        destinos.append(destino.to_json())
+    def guardar_en_json(cls, ruta, archivo):
+        rutas = cls.from_json(archivo)
+        rutas.append(ruta.to_json())
         with open(archivo, "w") as f:
-            json.dump(destinos, f, indent=4, default=lambda x: x.to_json())
+            json.dump(rutas, f, indent=4, default=lambda x: x.to_json())
             
     @classmethod
     def agregar_ruta(cls, archivo):
@@ -94,6 +94,8 @@ class rutaVisita:
             
             
     def agregar_destino_a_ruta(self, archivo_destinos):
+        rutas = self.from_json("data/rutaVisita.json")
+        
         # Cargar los destinos desde el archivo JSON
         destinos = destinoCulinario.from_json(archivo_destinos)
 
@@ -112,8 +114,9 @@ class rutaVisita:
             self.destinos_id.append(id_destino_agregar)
 
             # Guardar los cambios en la ruta (lista de destinos actualizada) en el archivo JSON
-            with open("ruta_archivo_rutas.json", "w") as f:
-                 json.dump(self.destinos_id, f, indent=4)
+            
+            with open("data/rutaVisita.json", "w") as f:
+                json.dump([rutaVisita.to_json() for ruta in rutas], f, indent=4)
 
             print("Destino agregado a la ruta exitosamente.")
         else:
