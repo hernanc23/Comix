@@ -4,7 +4,6 @@
         "nombre": "ruta principal",
         "destinos_id": [
             1,
-            2,
             3
         ]
     },
@@ -38,8 +37,7 @@
         "nombre": "Ruta 5",
         "destinos_id": [
             2,
-            4,
-            6
+            4
         ]
     },
     {

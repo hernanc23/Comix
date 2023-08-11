@@ -93,31 +93,81 @@ class rutaVisita:
             print(f"Ruta con ID {id_ruta_modificar} no encontrada.")
             
             
-    def agregar_destino_a_ruta(self, archivo_destinos):
-        rutas = self.from_json("data/rutaVisita.json")
-        
-        # Cargar los destinos desde el archivo JSON
-        destinos = destinoCulinario.from_json(archivo_destinos)
-
-        # Mostrar la lista de destinos disponibles
-        print("Destinos Disponibles:")
-        for destino in destinos:
-            print(f"ID: {destino.id}, Nombre: {destino.nombre}")
-
-        # Solicitar al usuario el ID del destino que desea agregar a la ruta
-        id_destino_agregar = int(input("Ingrese el ID del destino que desea agregar a la ruta: "))
-
-        # Verificar si el destino con el ID proporcionado existe
-        destino_encontrado = self.encontrar_cosa_por_id(destinos, id_destino_agregar)
-        if destino_encontrado:
-            # Agregar el ID del destino a la lista de destinos de la ruta
-            self.destinos_id.append(id_destino_agregar)
-
-            # Guardar los cambios en la ruta (lista de destinos actualizada) en el archivo JSON
             
-            with open("data/rutaVisita.json", "w") as f:
-                json.dump([rutaVisita.to_json() for ruta in rutas], f, indent=4)
+            
+    def agregar_destino_a_ruta(self, archivo_destinos):
+        # Cargar las rutas desde el archivo JSON
+        rutas = self.from_json("data/rutaVisita.json")
 
-            print("Destino agregado a la ruta exitosamente.")
+        # Mostrar la lista de rutas disponibles
+        print("Rutas Disponibles:")
+        for ruta in rutas:
+            print(f"ID: {ruta.id}, Nombre: {ruta.nombre}, Destinos: {ruta.destinos_id}")
+
+        # Solicitar al usuario el ID de la ruta que desea modificar
+        id_ruta_modificar = int(input("Ingrese el ID de la ruta a la que desea agregar el destino: "))
+
+        # Encontrar la ruta por su ID
+        ruta_encontrada = self.encontrar_cosa_por_id(rutas, id_ruta_modificar)
+
+        if ruta_encontrada:
+            # Cargar los destinos desde el archivo JSON
+            destinos = destinoCulinario.from_json(archivo_destinos)
+
+            # Mostrar la lista de destinos disponibles
+            print("Destinos Disponibles:")
+            for destino in destinos:
+                print(f"ID: {destino.id}, Nombre: {destino.nombre}")
+
+            # Solicitar al usuario el ID del destino que desea agregar a la ruta
+            id_destino_agregar = int(input("Ingrese el ID del destino que desea agregar a la ruta: "))
+
+            # Verificar si el destino con el ID proporcionado existe
+            destino_encontrado = self.encontrar_cosa_por_id(destinos, id_destino_agregar)
+            if destino_encontrado:
+                # Agregar el ID del destino a la lista de destinos de la ruta
+                ruta_encontrada.destinos_id.append(id_destino_agregar)
+
+                # Guardar los cambios en las rutas (lista de rutas actualizada) en el archivo JSON
+                with open("data/rutaVisita.json", "w") as f:
+                    # Convertir las rutas actualizadas a JSON y guardar todo el contenido
+                    json.dump([ruta.to_json() for ruta in rutas], f, indent=4)
+
+                print("Destino agregado a la ruta exitosamente.")
+            else:
+                print(f"Destino con ID {id_destino_agregar} no encontrado.")
         else:
-            print(f"Destino con ID {id_destino_agregar} no encontrado.")
+            print(f"Ruta con ID {id_ruta_modificar} no encontrada.")
+            
+            
+    def eliminar_destino_de_ruta(self):
+        # Cargar todas las rutas desde el archivo JSON
+        rutas = self.from_json("data/rutaVisita.json")
+
+        # Mostrar la lista actual de destinos en la ruta
+        print("Destinos en la Ruta:")
+        for destino_id in self.destinos_id:
+            print(f"ID de Destino: {destino_id}")
+
+        # Solicitar al usuario el ID del destino que desea eliminar de la ruta
+        id_destino_eliminar = int(input("Ingrese el ID del destino que desea eliminar de la ruta: "))
+
+        # Encontrar la ruta por su ID
+        ruta_encontrada = self.encontrar_cosa_por_id(rutas, self.id)
+
+        if ruta_encontrada:
+            # Verificar si el destino con el ID proporcionado está en la lista de la ruta encontrada
+            if id_destino_eliminar in ruta_encontrada.destinos_id:
+                # Eliminar el ID del destino de la lista de destinos de la ruta
+                ruta_encontrada.destinos_id.remove(id_destino_eliminar)
+
+                # Guardar los cambios en las rutas (lista de rutas actualizada) en el archivo JSON
+                with open("data/rutaVisita.json", "w") as f:
+                    # Convertir las rutas actualizadas a JSON y guardar todo el contenido
+                    json.dump([ruta.to_json() for ruta in rutas], f, indent=4)
+
+                print("Destino eliminado de la ruta exitosamente.")
+            else:
+                print(f"Destino con ID {id_destino_eliminar} no encontrado en la ruta.")
+        else:
+            print(f"Ruta con ID {self.id} no encontrada.")
