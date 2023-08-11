@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "nombre": "Restaurante A",
+        "tipo_cocina": "Italiana",
+        "ingredientes": [
+            "Tomate",
+            "Queso",
+            "Albahaca"
+        ],
+        "precio_minimo": 20,
+        "precio_maximo": 50,
+        "popularidad": 4.5,
+        "disponibilidad": 0,
+        "id_ubicacion": 1,
+        "imagen": "imagen_a.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Restaurante B",
+        "tipo_cocina": "Mexicana",
+        "ingredientes": [
+            "Aguacate",
+            "Cilantro",
+            "Chiles"
+        ],
+        "precio_minimo": 15,
+        "precio_maximo": 40,
+        "popularidad": 4.0,
+        "disponibilidad": 1,
+        "id_ubicacion": 2,
+        "imagen": "imagen_b.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Restaurante C",
+        "tipo_cocina": "Argentina",
+        "ingredientes": [
+            "carne",
+            " mates",
+            " dulce de leche"
+        ],
+        "precio_minimo": 10.0,
+        "precio_maximo": 60.0,
+        "popularidad": 5.0,
+        "disponibilidad": 0,
+        "id_ubicacion": 3,
+        "imagen": "imagen_c.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Restaurante D",
+        "tipo_cocina": "Japonesa",
+        "ingredientes": [
+            "pescado",
+            " arroz",
+            " picante"
+        ],
+        "precio_minimo": 40.0,
+        "precio_maximo": 90.0,
+        "popularidad": 5.5,
+        "disponibilidad": 1,
+        "id_ubicacion": 4,
+        "imagen": "imagen_d.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Restaurante E",
+        "tipo_cocina": "India",
+        "ingredientes": [
+            "Curry",
+            " picante"
+        ],
+        "precio_minimo": 20.0,
+        "precio_maximo": 60.0,
+        "popularidad": 4.8,
+        "disponibilidad": 0,
+        "id_ubicacion": 5,
+        "imagen": "imagen_e.jpg"
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "direccion": "calle falsa 123",
+        "coordenadas":[0.1,0.2]
+    },
+    {
+        "id": 2,
+        "direccion": "calle falsa 231",
+        "coordenadas":[0.1,0.2]
+    },
+    {
+        "id": 3,
+        "direccion": "calle falsa 444",
+        "coordenadas":[0.1,0.2]
+    }
+]

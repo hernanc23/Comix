@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "nombre": "Actividad 1",
+      "destino_id": 4,
+      "hora_inicio": "2023-08-09T15:30:00"
+    },
+    {
+      "id": 2,
+      "nombre": "Actividad 2",
+      "destino_id": 101,
+      "hora_inicio": "2023-08-09T18:00:00"
+    },
+    {
+      "id": 3,
+      "nombre": "Actividad 3",
+      "destino_id": 102,
+      "hora_inicio": "2023-08-10T10:00:00"
+    }
+  ]

@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "nombre": "ruta principal",
+        "destinos_id": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Ruta 2",
+        "destinos_id": [
+            1,
+            2,
+            4
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Ruta 3",
+        "destinos_id": [
+            1,
+            4
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Ruta 4",
+        "destinos_id": [
+            2,
+            3
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Ruta 5",
+        "destinos_id": [
+            2,
+            4,
+            6
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Ruta 6",
+        "destinos_id": [
+            1,
+            5
+        ]
+    }
+]

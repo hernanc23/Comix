@@ -1,0 +1,42 @@
+[
+    {
+        "nombre_usuario": "pepe777",
+        "contrasena": "gato",
+        "id": 1,
+        "nombre": "pepe",
+        "apellido": "pipa",
+        "historial_rutas": [
+            1,2,3
+        ]
+    },
+    {
+        "nombre_usuario": "pipo97",
+        "contrasena": "perro",
+        "id": 2,
+        "nombre": "pipo",
+        "apellido": "palo",
+        "historial_rutas": [
+            3,4
+        ]
+    },
+    {
+        "nombre_usuario": "pipo",
+        "contrasena": "river",
+        "id": 3,
+        "nombre": "pedro",
+        "apellido": "pascal",
+        "historial_rutas": [
+            1,5
+        ]
+    },
+    {
+        "nombre_usuario": "hernancito",
+        "contrasena": "conejo",
+        "id": 4,
+        "nombre": "hernan",
+        "apellido": "baca",
+        "historial_rutas": [
+            2,4
+        ]
+    }
+]
